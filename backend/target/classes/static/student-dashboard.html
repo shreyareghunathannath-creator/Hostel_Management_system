@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123d35">
+    <meta name="description" content="HostelEase student dashboard.">
+    <title>Student Dashboard | HostelEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/auth-api.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+  <body class="session-pending" data-dashboard="student">
+    <div class="dashboard-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="index.html" aria-label="HostelEase home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M5 26V13.5L16 5l11 8.5V26h-8v-8h-6v8H5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 13h.01M21 13h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">HostelEase<span>.</span></span>
+        </a>
+        <div class="sidebar-label">MY CAMPUS</div>
+        <nav class="side-nav" aria-label="Student dashboard navigation">
+          <button class="nav-item is-active" data-section="overview"><span class="nav-icon">⌂</span> My overview</button>
+          <button class="nav-item" data-section="room"><span class="nav-icon">▦</span> Room details</button>
+          <button class="nav-item" data-section="fees"><span class="nav-icon">＄</span> My fees</button>
+          <button class="nav-item" data-section="requests"><span class="nav-icon">✳</span> Maintenance <span class="nav-count">1</span></button>
+          <button class="nav-item" data-section="notices"><span class="nav-icon">▤</span> Notice board</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-help"><span class="help-symbol">✳</span><strong>Need a hand?</strong><span>Your residence team is happy to help.</span><a href="mailto:support@hostelease.example">Contact support <span aria-hidden="true">→</span></a></div>
+          <a class="sidebar-logout" href="index.html" data-logout><span aria-hidden="true">↪</span> Log out</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span></span><span></span><span></span></button>
+          <div class="breadcrumb"><span>HostelEase</span><span class="crumb-divider">/</span><strong id="current-page">My overview</strong></div>
+          <div class="topbar-user">
+            <div class="topbar-date">WEDNESDAY, OCTOBER 28</div>
+            <span class="avatar student-avatar">PS</span>
+            <div class="user-label"><strong>Priya Sharma</strong><span>Student resident</span></div>
+            <a class="logout-button" href="index.html" data-logout>Log out <span aria-hidden="true">↗</span></a>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="dashboard-section is-visible" id="section-overview" aria-labelledby="welcome-title">
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAMPUS, YOUR COMMUNITY</p><h1 id="welcome-title">Welcome home, Priya <span class="wave">✳</span></h1><p class="section-subtitle">Here’s your hostel life at a glance.</p></div><span class="resident-pill"><i></i> Active resident</span></div>
+            <div class="student-hero"><div class="hero-copy"><span class="hero-kicker">YOUR ROOM, YOUR SPACE</span><h2>Room A-204</h2><p>Maple House · Block A · 2nd Floor</p><button class="hero-link" type="button" data-navigate="room">Explore room details <span>→</span></button></div><div class="hero-art" aria-hidden="true"><div class="hero-sun"></div><div class="hero-building"><i></i><i></i><i></i><i></i><b></b></div><span class="hero-star">✳</span></div><div class="hero-room-chip"><span>⌂</span><div><strong>Bed 01</strong><small>Your current allocation</small></div></div></div>
+            <div class="student-stats"><article class="student-stat"><span class="student-stat-icon icon-room">⌂</span><div><span class="student-stat-label">Your room</span><strong>A-204 <small>· Bed 01</small></strong><a href="#" data-navigate="room">View room <span>→</span></a></div></article><article class="student-stat"><span class="student-stat-icon icon-fee">＄</span><div><span class="student-stat-label">Fees this term</span><strong>₹ 12,500 <small class="paid-inline">Paid</small></strong><a href="#" data-navigate="fees">View payment history <span>→</span></a></div></article><article class="student-stat"><span class="student-stat-icon icon-request">✳</span><div><span class="student-stat-label">Maintenance request</span><strong>1 <small>in progress</small></strong><a href="#" data-navigate="requests">Track request <span>→</span></a></div></article></div>
+            <div class="overview-grid student-overview-grid">
+              <article class="panel upcoming-panel"><div class="panel-heading"><div><p class="panel-kicker">GOOD TO KNOW</p><h2>Coming up</h2></div><span class="calendar-icon">▦</span></div><div class="upcoming-event"><span class="event-date"><strong>30</strong><small>OCT</small></span><div><strong>Community dinner</strong><p>Main dining hall · 7:00 PM</p></div><span class="event-arrow">→</span></div><div class="upcoming-event"><span class="event-date muted-date"><strong>02</strong><small>NOV</small></span><div><strong>Monthly room inspection</strong><p>Maple House · from 10:00 AM</p></div><span class="event-arrow">→</span></div></article>
+              <article class="panel latest-notice-panel"><div class="panel-heading"><div><p class="panel-kicker">FROM THE HOSTEL OFFICE</p><h2>Latest notice</h2></div><button class="text-button" type="button" data-navigate="notices">All notices <span>→</span></button></div><div class="latest-notice"><span class="notice-tag tag-gold">IMPORTANT</span><h3>Weekend visitor timings</h3><p>Visitor hours this weekend are 10:00 AM to 6:00 PM. Please register your guests at the front desk.</p><time>Posted October 27, 2026</time></div></article>
+            </div>
+          </section>
+
+          <section class="dashboard-section" id="section-room" aria-labelledby="room-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR ACCOMMODATION</p><h1 id="room-title">Room details</h1><p class="section-subtitle">Everything about your room, allocation, and block.</p></div><span class="resident-pill"><i></i> Current allocation</span></div>
+            <div class="room-detail-grid"><article class="panel room-feature"><div class="room-feature-art"><div class="hero-sun"></div><div class="hero-building"><i></i><i></i><i></i><i></i><b></b></div></div><div class="room-feature-info"><p class="panel-kicker">MAPLE HOUSE · BLOCK A</p><h2>Room A-204</h2><p>Your room is on the second floor of Maple House.</p><div class="room-attributes"><span><small>BED</small><strong>01</strong></span><span><small>FLOOR</small><strong>02</strong></span><span><small>CAPACITY</small><strong>2 residents</strong></span></div></div></article><article class="panel room-side-panel"><div class="panel-heading"><div><p class="panel-kicker">YOUR ROOMMATE</p><h2>Meet Ananya</h2></div><span class="avatar avatar-pink large-avatar">AK</span></div><div class="roommate-info"><strong>Ananya Kapoor</strong><span>Student · Year 3</span><span>Roll no. HMS23-0149</span><a href="mailto:ananya.k@campus.edu">ananya.k@campus.edu</a></div><div class="roommate-note"><span>✳</span><p>You share a 2-bed room. Keep your room comfortable by respecting each other’s schedules and space.</p></div></article></div><article class="panel block-information"><div class="panel-heading"><div><p class="panel-kicker">AROUND YOUR BLOCK</p><h2>Maple House facilities</h2></div></div><div class="facility-grid"><div><span>⌂</span><strong>Common lounge</strong><small>Ground floor · Open 6 AM – 11 PM</small></div><div><span>▤</span><strong>Laundry room</strong><small>Ground floor · Tokens at reception</small></div><div><span>♨</span><strong>Dining hall</strong><small>Block A annex · Meals daily</small></div><div><span>✳</span><strong>Residence team</strong><small>Ground floor · Available 24/7</small></div></div></article>
+          </section>
+
+          <section class="dashboard-section" id="section-fees" aria-labelledby="student-fees-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR ACCOUNT</p><h1 id="student-fees-title">Fee status</h1><p class="section-subtitle">Review your hostel charges and payment history.</p></div></div>
+            <div class="fee-summary-grid"><article class="fee-summary-card"><span class="fee-summary-icon">✓</span><div><span class="panel-kicker">CURRENT TERM · JUL – DEC 2026</span><h2>All caught up</h2><p>Your hostel fee has been paid in full.</p></div><span class="status-badge status-paid">Paid</span></article><article class="fee-amount-card"><span>AMOUNT PAID</span><strong>₹ 12,500</strong><small>Paid on October 20, 2026</small></article></div>
+            <article class="panel table-panel"><div class="panel-heading table-heading"><div><p class="panel-kicker">PAYMENT HISTORY</p><h2>Your transactions</h2></div></div><div class="table-scroll"><table><thead><tr><th>DESCRIPTION</th><th>PERIOD</th><th>DATE</th><th>AMOUNT</th><th>STATUS</th><th>RECEIPT</th></tr></thead><tbody><tr><td><strong>Hostel accommodation fee</strong></td><td>Jul – Dec 2026</td><td>Oct 20, 2026</td><td><strong>₹ 12,500</strong></td><td><span class="status-badge status-paid">Paid</span></td><td><button class="receipt-button" type="button" data-receipt="RCP-261020-0182">Download</button></td></tr><tr><td><strong>Hostel accommodation fee</strong></td><td>Jan – Jun 2026</td><td>Jan 12, 2026</td><td><strong>₹ 12,000</strong></td><td><span class="status-badge status-paid">Paid</span></td><td><button class="receipt-button" type="button" data-receipt="RCP-260112-0182">Download</button></td></tr><tr><td><strong>Security deposit</strong></td><td>One-time</td><td>Jul 08, 2025</td><td><strong>₹ 5,000</strong></td><td><span class="status-badge status-paid">Paid</span></td><td><button class="receipt-button" type="button" data-receipt="RCP-250708-0182">Download</button></td></tr></tbody></table></div></article><p class="table-note">Questions about your fee? <a href="mailto:fees@hostelease.example">Contact the finance office</a>.</p>
+          </section>
+
+          <section class="dashboard-section" id="section-requests" aria-labelledby="requests-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> WE’RE HERE TO HELP</p><h1 id="requests-title">Maintenance requests</h1><p class="section-subtitle">Report a room issue and follow it through to resolution.</p></div></div>
+            <div class="request-layout"><article class="panel composer-panel"><div class="panel-heading"><div><p class="panel-kicker">SOMETHING NEEDS FIXING?</p><h2>Submit a request</h2></div></div><form id="request-form" class="notice-form" novalidate><label for="request-category">Issue type</label><select id="request-category" required><option value="">Select an issue</option><option>Plumbing</option><option>Electrical</option><option>Furniture</option><option>Cleaning</option><option>Other</option></select><label for="request-subject">Subject</label><input id="request-subject" placeholder="Briefly describe the issue" required><label for="request-details">More details</label><textarea id="request-details" rows="4" placeholder="Where is the issue and when did it start?" required></textarea><div class="composer-footer"><span>Room A-204 · Maple House</span><button class="button button-primary" type="submit">Submit request <span aria-hidden="true">→</span></button></div><p class="inline-message" id="request-message" role="status" aria-live="polite"></p></form></article><article class="panel request-history"><div class="panel-heading"><div><p class="panel-kicker">YOUR SERVICE TICKETS</p><h2>Request history</h2></div><span class="count-pill" id="request-count">2 requests</span></div><div class="request-list" id="request-list"><article class="request-card"><div class="request-card-top"><span class="request-category">PLUMBING</span><span class="status-badge status-pending">Pending</span></div><h3>Bathroom tap is leaking</h3><p>Submitted October 27, 2026 · Ticket #MT-2048</p><div class="request-progress"><i class="progress-current"></i><i></i><i></i><span>Submitted · Awaiting review</span></div></article><article class="request-card"><div class="request-card-top"><span class="request-category">ELECTRICAL</span><span class="status-badge status-resolved">Resolved</span></div><h3>Desk lamp socket not working</h3><p>Submitted October 18, 2026 · Ticket #MT-2012</p><div class="request-progress resolved-progress"><i></i><i></i><i></i><span>Resolved October 19</span></div></article></div></article></div>
+          </section>
+
+          <section class="dashboard-section" id="section-notices" aria-labelledby="student-notices-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> STAY IN THE LOOP</p><h1 id="student-notices-title">Notice board</h1><p class="section-subtitle">Updates and announcements from your hostel team.</p></div><span class="count-pill" id="student-notice-count">3 updates</span></div>
+            <div class="student-notice-grid"><article class="panel student-notices-list" id="student-notice-list"><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-gold">IMPORTANT</span><time>Oct 27, 2026</time></div><h3>Weekend visitor timings</h3><p>Visitor hours this weekend are 10:00 AM to 6:00 PM. Please register your guests at the front desk.</p><span class="notice-author">Hostel Office · Maple House</span></article><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-green">FACILITIES</span><time>Oct 25, 2026</time></div><h3>Water tank cleaning schedule</h3><p>Block B water supply will be paused on Thursday between 9 AM and 12 PM for scheduled maintenance.</p><span class="notice-author">Facilities Team</span></article><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-blue">COMMUNITY</span><time>Oct 22, 2026</time></div><h3>Community dinner this Friday</h3><p>Join us at the main dining hall at 7 PM. Please confirm your attendance with the residence team.</p><span class="notice-author">Hostel Office</span></article></article><aside class="panel notice-side-card"><span class="notice-side-icon">✳</span><p class="panel-kicker">HAVE A QUESTION?</p><h2>We’re just around the corner.</h2><p>For anything urgent, reach out to the Maple House residence team.</p><a class="button button-outline" href="mailto:support@hostelease.example">Contact the team <span>→</span></a></aside></div>
+          </section>
+          <footer class="content-footer"><span>© 2026 HostelEase</span><span>Room to grow, space to belong.</span></footer>
+        </div>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
