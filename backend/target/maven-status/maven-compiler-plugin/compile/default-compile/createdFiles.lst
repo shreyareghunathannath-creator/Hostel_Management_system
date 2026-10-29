@@ -1,0 +1,17 @@
+com\hostelease\hms\auth\dto\RegistrationResponse.class
+com\hostelease\hms\auth\dto\CsrfResponse.class
+com\hostelease\hms\auth\AuthController.class
+com\hostelease\hms\auth\InvalidRegistrationException.class
+com\hostelease\hms\config\SecurityConfig.class
+com\hostelease\hms\auth\ApiExceptionHandler.class
+com\hostelease\hms\user\UserAccount.class
+com\hostelease\hms\auth\dto\LoginResponse.class
+com\hostelease\hms\user\UserAccountRepository.class
+com\hostelease\hms\user\UserRole.class
+com\hostelease\hms\auth\AuthService.class
+com\hostelease\hms\auth\AuthService$1.class
+com\hostelease\hms\config\LocalAdminBootstrap.class
+com\hostelease\hms\config\SecurityConfig$1.class
+com\hostelease\hms\auth\dto\RegistrationRequest.class
+com\hostelease\hms\auth\DuplicateAccountException.class
+com\hostelease\hms\HostelEaseApplication.class

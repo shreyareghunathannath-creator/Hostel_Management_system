@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123d35">
+    <meta name="description" content="HostelEase administrator dashboard.">
+    <title>Admin Dashboard | HostelEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/auth-api.js" defer></script>
+    <script src="js/dashboard.js" defer></script>
+  </head>
+  <body class="session-pending" data-dashboard="admin">
+    <div class="dashboard-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="index.html" aria-label="HostelEase home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none"><path d="M5 26V13.5L16 5l11 8.5V26h-8v-8h-6v8H5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 13h.01M21 13h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+          </span>
+          <span class="brand-name">HostelEase<span>.</span></span>
+        </a>
+        <div class="sidebar-label">WORKSPACE</div>
+        <nav class="side-nav" aria-label="Admin dashboard navigation">
+          <button class="nav-item is-active" data-section="overview"><span class="nav-icon">⌂</span> Overview</button>
+          <button class="nav-item" data-section="rooms"><span class="nav-icon">▦</span> Room management</button>
+          <button class="nav-item" data-section="students"><span class="nav-icon">♙</span> Students</button>
+          <button class="nav-item" data-section="fees"><span class="nav-icon">＄</span> Fee management</button>
+          <button class="nav-item" data-section="notices"><span class="nav-icon">▤</span> Announcements</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-help"><span class="help-symbol">✳</span><strong>Need a hand?</strong><span>Our support team is here for you.</span><a href="mailto:support@hostelease.example">Contact support <span aria-hidden="true">→</span></a></div>
+          <a class="sidebar-logout" href="index.html" data-logout><span aria-hidden="true">↪</span> Log out</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span></span><span></span><span></span></button>
+          <div class="breadcrumb"><span>HostelEase</span><span class="crumb-divider">/</span><strong id="current-page">Overview</strong></div>
+          <div class="topbar-user">
+            <div class="topbar-date">WEDNESDAY, OCTOBER 28</div>
+            <span class="avatar admin-avatar">AM</span>
+            <div class="user-label"><strong>Arjun Mehta</strong><span>Hostel Administrator</span></div>
+            <a class="logout-button" href="index.html" data-logout>Log out <span aria-hidden="true">↗</span></a>
+          </div>
+        </header>
+
+        <div class="content-wrap">
+          <section class="dashboard-section is-visible" id="section-overview" aria-labelledby="welcome-title">
+            <div class="welcome-row">
+              <div><p class="eyebrow"><span class="eyebrow-dot"></span> WEDNESDAY, OCTOBER 28, 2026</p><h1 id="welcome-title">Good morning, Arjun <span class="wave">✳</span></h1><p class="section-subtitle">Here’s what’s happening across your hostel today.</p></div>
+              <button class="button button-primary" type="button" data-open-room><span aria-hidden="true">＋</span> Add a room</button>
+            </div>
+            <div class="stats-grid">
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon">▦</span><span class="stat-trend">All blocks</span></div><div class="stat-value" id="total-rooms">128</div><div class="stat-label">Total rooms</div><div class="stat-foot"><span class="stat-dot green-dot"></span> Across 4 hostel blocks</div></article>
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon gold-icon">♙</span><span class="stat-trend">78% capacity</span></div><div class="stat-value" id="occupied-rooms">100</div><div class="stat-label">Occupied rooms</div><div class="stat-foot"><span class="mini-progress"><i></i></span> 28 rooms available</div></article>
+              <article class="stat-card"><div class="stat-top"><span class="stat-icon pale-icon">⌂</span><span class="stat-trend">Ready to assign</span></div><div class="stat-value" id="available-beds">56</div><div class="stat-label">Available beds</div><div class="stat-foot"><span class="stat-dot gold-dot"></span> Spread across all blocks</div></article>
+              <article class="stat-card stat-card-alert"><div class="stat-top"><span class="stat-icon alert-icon">＄</span><span class="stat-trend alert-trend">Needs attention</span></div><div class="stat-value">₹ 84,500</div><div class="stat-label">Pending fee payments</div><div class="stat-foot"><span class="stat-dot red-dot"></span> 17 students have pending dues</div></article>
+            </div>
+
+            <div class="overview-grid">
+              <article class="panel occupancy-panel">
+                <div class="panel-heading"><div><p class="panel-kicker">ROOMS AT A GLANCE</p><h2>Occupancy overview</h2></div><button class="text-button" type="button" data-navigate="rooms">View rooms <span>→</span></button></div>
+                <div class="occupancy-content">
+                  <div class="donut-chart"><div class="donut-center"><strong>78%</strong><span>occupied</span></div></div>
+                  <div class="occupancy-legend"><div><span class="legend-swatch occupied-swatch"></span><span>Occupied rooms</span><strong>100</strong></div><div><span class="legend-swatch available-swatch"></span><span>Available rooms</span><strong>28</strong></div><div><span class="legend-swatch maintenance-swatch"></span><span>Under maintenance</span><strong>4</strong></div></div>
+                </div>
+                <div class="block-list"><div><span>Block A <small>Girls’ residence</small></span><div class="block-meter"><i style="width:82%"></i></div><strong>82%</strong></div><div><span>Block B <small>Boys’ residence</small></span><div class="block-meter"><i style="width:74%"></i></div><strong>74%</strong></div><div><span>Block C <small>Boys’ residence</small></span><div class="block-meter"><i style="width:88%"></i></div><strong>88%</strong></div></div>
+              </article>
+              <article class="panel activity-panel">
+                <div class="panel-heading"><div><p class="panel-kicker">QUICK UPDATES</p><h2>Recent activity</h2></div><span class="live-pill"><i></i> Live</span></div>
+                <div class="activity-list">
+                  <div class="activity-item"><span class="activity-icon activity-gold">＄</span><div><strong>Fee payment received</strong><p>Priya Sharma · Room A-204</p><time>12 minutes ago</time></div><span class="activity-amount">+ ₹ 12,500</span></div>
+                  <div class="activity-item"><span class="activity-icon activity-green">♙</span><div><strong>New student registered</strong><p>Rohan Gupta · Block B</p><time>48 minutes ago</time></div></div>
+                  <div class="activity-item"><span class="activity-icon activity-blue">⌂</span><div><strong>Maintenance request resolved</strong><p>Water tap repair · Room C-112</p><time>2 hours ago</time></div></div>
+                  <div class="activity-item"><span class="activity-icon activity-pink">▤</span><div><strong>New announcement posted</strong><p>Weekend visitor timings</p><time>Yesterday</time></div></div>
+                </div>
+              </article>
+            </div>
+
+            <article class="panel attention-panel">
+              <div class="panel-heading"><div><p class="panel-kicker">FOLLOW UP</p><h2>Needs your attention</h2></div><span class="count-pill">3 items</span></div>
+              <div class="attention-grid"><button class="attention-item" type="button" data-navigate="fees"><span class="attention-icon fee-attention">＄</span><span><strong>17 pending fee payments</strong><small>₹ 84,500 in outstanding dues</small></span><span class="attention-arrow">→</span></button><button class="attention-item" type="button" data-navigate="rooms"><span class="attention-icon room-attention">⌂</span><span><strong>4 rooms under maintenance</strong><small>Review room availability</small></span><span class="attention-arrow">→</span></button><button class="attention-item" type="button" data-navigate="students"><span class="attention-icon student-attention">♙</span><span><strong>3 student requests</strong><small>Awaiting an administrator response</small></span><span class="attention-arrow">→</span></button></div>
+            </article>
+          </section>
+
+          <section class="dashboard-section" id="section-rooms" aria-labelledby="rooms-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> ACCOMMODATION</p><h1 id="rooms-title">Room management</h1><p class="section-subtitle">Manage room availability, assignments, and maintenance.</p></div><button class="button button-primary" type="button" data-open-room><span aria-hidden="true">＋</span> Add a room</button></div>
+            <div class="stats-grid compact-stats"><article class="stat-card"><div class="stat-value" id="rooms-count">128</div><div class="stat-label">Total rooms</div></article><article class="stat-card"><div class="stat-value" id="rooms-occupied">100</div><div class="stat-label">Occupied</div></article><article class="stat-card"><div class="stat-value" id="beds-count">56</div><div class="stat-label">Available beds</div></article><article class="stat-card"><div class="stat-value">4</div><div class="stat-label">Maintenance</div></article></div>
+            <article class="panel table-panel"><div class="panel-heading table-heading"><div><p class="panel-kicker">ROOM DIRECTORY</p><h2>Rooms &amp; allocations</h2></div><div class="table-tools"><label class="search-box"><span>⌕</span><input id="room-search" type="search" placeholder="Search rooms" aria-label="Search rooms"></label><select class="filter-select" id="room-filter" aria-label="Filter by room status"><option value="all">All statuses</option><option value="Available">Available</option><option value="Occupied">Occupied</option><option value="Maintenance">Maintenance</option></select></div></div><div class="table-scroll"><table><thead><tr><th>ROOM</th><th>BLOCK</th><th>CAPACITY</th><th>ASSIGNED TO</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="room-rows"><tr data-room data-capacity="2" data-status="Occupied"><td><strong>A-204</strong></td><td>Block A</td><td>2 beds</td><td>Priya Sharma</td><td><span class="status-badge status-occupied">Occupied</span></td><td><div class="row-actions"><button type="button" data-edit-room aria-label="Edit room A-204">Edit</button><button type="button" data-assign-room aria-label="Assign room A-204">Assign</button><button class="danger-action" type="button" data-delete-room aria-label="Delete room A-204">Delete</button></div></td></tr><tr data-room data-capacity="3" data-status="Available"><td><strong>B-108</strong></td><td>Block B</td><td>3 beds</td><td><span class="empty-cell">Unassigned</span></td><td><span class="status-badge status-available">Available</span></td><td><div class="row-actions"><button type="button" data-edit-room aria-label="Edit room B-108">Edit</button><button type="button" data-assign-room aria-label="Assign room B-108">Assign</button><button class="danger-action" type="button" data-delete-room aria-label="Delete room B-108">Delete</button></div></td></tr><tr data-room data-capacity="2" data-status="Maintenance"><td><strong>C-112</strong></td><td>Block C</td><td>2 beds</td><td><span class="empty-cell">Unassigned</span></td><td><span class="status-badge status-maintenance">Maintenance</span></td><td><div class="row-actions"><button type="button" data-edit-room aria-label="Edit room C-112">Edit</button><button type="button" data-assign-room aria-label="Assign room C-112">Assign</button><button class="danger-action" type="button" data-delete-room aria-label="Delete room C-112">Delete</button></div></td></tr><tr data-room data-capacity="2" data-status="Available"><td><strong>D-301</strong></td><td>Block D</td><td>2 beds</td><td><span class="empty-cell">Unassigned</span></td><td><span class="status-badge status-available">Available</span></td><td><div class="row-actions"><button type="button" data-edit-room aria-label="Edit room D-301">Edit</button><button type="button" data-assign-room aria-label="Assign room D-301">Assign</button><button class="danger-action" type="button" data-delete-room aria-label="Delete room D-301">Delete</button></div></td></tr></tbody></table></div><p class="table-note">Showing sample room records. Changes remain visible until this page is refreshed.</p></article>
+          </section>
+
+          <section class="dashboard-section" id="section-students" aria-labelledby="students-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> RESIDENT DIRECTORY</p><h1 id="students-title">Student management</h1><p class="section-subtitle">View student profiles, room assignments, and contact details.</p></div><span class="count-pill">248 registered students</span></div>
+            <article class="panel table-panel"><div class="panel-heading table-heading"><div><p class="panel-kicker">STUDENT DIRECTORY</p><h2>All students</h2></div><label class="search-box"><span>⌕</span><input id="student-search" type="search" placeholder="Search students" aria-label="Search students"></label></div><div class="table-scroll"><table><thead><tr><th>STUDENT</th><th>ROLL NUMBER</th><th>ROOM</th><th>EMAIL</th><th>PHONE</th><th>FEE STATUS</th></tr></thead><tbody id="student-rows"><tr data-student><td><div class="person-cell"><span class="avatar avatar-gold">PS</span><strong>Priya Sharma</strong></div></td><td>HMS24-0182</td><td>A-204</td><td>priya.s@campus.edu</td><td>+91 98765 43210</td><td><span class="status-badge status-paid">Paid</span></td></tr><tr data-student><td><div class="person-cell"><span class="avatar avatar-blue">RG</span><strong>Rohan Gupta</strong></div></td><td>HMS24-0205</td><td>B-108</td><td>rohan.g@campus.edu</td><td>+91 98221 55440</td><td><span class="status-badge status-pending">Pending</span></td></tr><tr data-student><td><div class="person-cell"><span class="avatar avatar-pink">AK</span><strong>Ananya Kapoor</strong></div></td><td>HMS23-0149</td><td>A-108</td><td>ananya.k@campus.edu</td><td>+91 99881 23041</td><td><span class="status-badge status-paid">Paid</span></td></tr><tr data-student><td><div class="person-cell"><span class="avatar avatar-green">VS</span><strong>Vihaan Singh</strong></div></td><td>HMS24-0231</td><td>C-201</td><td>vihaan.s@campus.edu</td><td>+91 98100 78012</td><td><span class="status-badge status-pending">Pending</span></td></tr></tbody></table></div></article>
+            <div class="info-banner"><span class="banner-icon">✳</span><div><strong>Student records are sample data</strong><p>Connect this dashboard to your student database to view live records and contact information.</p></div></div>
+          </section>
+
+          <section class="dashboard-section" id="section-fees" aria-labelledby="fees-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> PAYMENTS &amp; DUES</p><h1 id="fees-title">Fee management</h1><p class="section-subtitle">Track hostel fee payments and follow up on pending dues.</p></div><button class="button button-outline" id="export-fees" type="button">Export report <span aria-hidden="true">↓</span></button></div>
+            <div class="stats-grid compact-stats"><article class="stat-card"><div class="stat-value">₹ 31.2L</div><div class="stat-label">Collected this term</div><div class="stat-foot">From 231 transactions</div></article><article class="stat-card stat-card-alert"><div class="stat-value">₹ 84,500</div><div class="stat-label">Pending dues</div><div class="stat-foot">17 students</div></article><article class="stat-card"><div class="stat-value">93%</div><div class="stat-label">Collection rate</div><div class="stat-foot">Up 4% from last term</div></article></div>
+            <article class="panel table-panel"><div class="panel-heading table-heading"><div><p class="panel-kicker">PAYMENT REGISTER</p><h2>Recent payments</h2></div><label class="search-box"><span>⌕</span><input id="fee-search" type="search" placeholder="Search payments" aria-label="Search payments"></label></div><div class="table-scroll"><table><thead><tr><th>STUDENT</th><th>ROOM</th><th>AMOUNT</th><th>DUE DATE</th><th>STATUS</th><th>RECEIPT</th></tr></thead><tbody id="fee-rows"><tr data-fee><td><div class="person-cell"><span class="avatar avatar-gold">PS</span><strong>Priya Sharma</strong></div></td><td>A-204</td><td><strong>₹ 12,500</strong></td><td>Oct 20, 2026</td><td><span class="status-badge status-paid">Paid</span></td><td><button class="receipt-button" type="button" data-receipt="RCP-261020-0182">Generate receipt</button></td></tr><tr data-fee><td><div class="person-cell"><span class="avatar avatar-blue">RG</span><strong>Rohan Gupta</strong></div></td><td>B-108</td><td><strong>₹ 12,500</strong></td><td>Oct 25, 2026</td><td><span class="status-badge status-pending">Pending</span></td><td><span class="empty-cell">—</span></td></tr><tr data-fee><td><div class="person-cell"><span class="avatar avatar-pink">AK</span><strong>Ananya Kapoor</strong></div></td><td>A-108</td><td><strong>₹ 12,500</strong></td><td>Oct 20, 2026</td><td><span class="status-badge status-paid">Paid</span></td><td><button class="receipt-button" type="button" data-receipt="RCP-261020-0149">Generate receipt</button></td></tr><tr data-fee><td><div class="person-cell"><span class="avatar avatar-green">VS</span><strong>Vihaan Singh</strong></div></td><td>C-201</td><td><strong>₹ 12,500</strong></td><td>Oct 25, 2026</td><td><span class="status-badge status-pending">Pending</span></td><td><span class="empty-cell">—</span></td></tr></tbody></table></div></article>
+          </section>
+
+          <section class="dashboard-section" id="section-notices" aria-labelledby="notices-title" hidden>
+            <div class="welcome-row"><div><p class="eyebrow"><span class="eyebrow-dot"></span> HOSTEL COMMUNICATION</p><h1 id="notices-title">Announcements</h1><p class="section-subtitle">Share important updates with your hostel community.</p></div></div>
+            <div class="notice-layout"><article class="panel composer-panel"><div class="panel-heading"><div><p class="panel-kicker">NEW MESSAGE</p><h2>Post an announcement</h2></div></div><form id="notice-form" class="notice-form" novalidate><label for="notice-title">Notice title</label><input id="notice-title" name="title" placeholder="e.g. Weekend visitor timings" required><label for="notice-body">Message</label><textarea id="notice-body" name="message" rows="4" placeholder="Write an update for residents..." required></textarea><div class="composer-footer"><span>Visible to all hostel residents</span><button class="button button-primary" type="submit">Post notice <span aria-hidden="true">→</span></button></div><p class="inline-message" id="notice-message" role="status" aria-live="polite"></p></form></article><article class="panel notice-board"><div class="panel-heading"><div><p class="panel-kicker">RECENT UPDATES</p><h2>Notice board</h2></div><span class="count-pill" id="notice-count">3 notices</span></div><div class="notice-list" id="notice-list"><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-gold">IMPORTANT</span><time>Oct 27, 2026</time></div><h3>Weekend visitor timings</h3><p>Visitor hours this weekend are 10:00 AM to 6:00 PM. Please register your guests at the front desk.</p><span class="notice-author">Posted by Arjun Mehta</span></article><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-green">FACILITIES</span><time>Oct 25, 2026</time></div><h3>Water tank cleaning schedule</h3><p>Block B water supply will be paused on Thursday between 9 AM and 12 PM for scheduled maintenance.</p><span class="notice-author">Posted by Hostel Office</span></article><article class="notice-card"><div class="notice-meta"><span class="notice-tag tag-blue">COMMUNITY</span><time>Oct 22, 2026</time></div><h3>Community dinner this Friday</h3><p>Join us at the main dining hall at 7 PM. Please confirm your attendance with the residence team.</p><span class="notice-author">Posted by Arjun Mehta</span></article></div></article></div>
+          </section>
+          <footer class="content-footer"><span>© 2026 HostelEase</span><span>Room to grow, space to belong.</span></footer>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="room-dialog" id="room-dialog" aria-labelledby="room-dialog-title">
+      <form id="room-form" method="dialog">
+        <div class="dialog-heading"><div><p class="panel-kicker">ROOM DIRECTORY</p><h2 id="room-dialog-title">Add a room</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close dialog">×</button></div>
+        <input id="room-original-id" type="hidden">
+        <label for="room-number">Room number</label><input id="room-number" name="roomNumber" placeholder="e.g. A-204" required>
+        <div class="dialog-row"><div><label for="room-block">Block</label><select id="room-block" name="block" required><option value="">Select block</option><option>Block A</option><option>Block B</option><option>Block C</option><option>Block D</option></select></div><div><label for="room-capacity">Beds</label><select id="room-capacity" name="capacity"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></div></div>
+        <label for="room-assigned">Assigned student <span class="optional">(optional)</span></label><input id="room-assigned" name="assigned" placeholder="Student name or leave unassigned">
+        <label for="room-status">Room status</label><select id="room-status" name="status"><option>Available</option><option>Occupied</option><option>Maintenance</option></select>
+        <div class="dialog-actions"><button class="button button-outline" type="button" data-close-dialog>Cancel</button><button class="button button-primary" type="submit">Save room</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

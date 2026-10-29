@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f0e5">
+    <meta name="description" content="Create your HostelEase account.">
+    <title>Create an account | HostelEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/auth-api.js" defer></script>
+    <script src="js/signup.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html" aria-label="HostelEase home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none">
+              <path d="M5 26V13.5L16 5l11 8.5V26h-8v-8h-6v8H5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M11 13h.01M21 13h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">HostelEase<span>.</span></span>
+        </a>
+        <div class="header-prompt">
+          <span>Already registered?</span>
+          <a class="register-link" href="index.html">Sign in <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="intro-panel" aria-label="HostelEase introduction">
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR HOME, WELL MANAGED</p>
+            <h1>A better stay<br>starts <span>here.</span></h1>
+            <p class="intro-description">Everything you need for a comfortable campus life, all in one place.</p>
+          </div>
+          <div class="campus-art" aria-hidden="true">
+            <div class="sun-orbit"></div>
+            <div class="art-sparkle sparkle-one">✳</div>
+            <div class="art-sparkle sparkle-two">✳</div>
+            <div class="building">
+              <div class="building-roof"></div>
+              <div class="building-body">
+                <div class="building-windows">
+                  <i></i><i></i><i></i>
+                  <i></i><i></i><i></i>
+                  <i></i><i></i><i></i>
+                </div>
+                <div class="building-door"></div>
+              </div>
+            </div>
+            <div class="plant plant-left"><i></i><i></i><i></i><b></b></div>
+            <div class="plant plant-right"><i></i><i></i><i></i><b></b></div>
+            <div class="ground"></div>
+            <div class="art-caption"><span class="caption-icon">⌂</span> A place to belong</div>
+          </div>
+          <div class="intro-footer">
+            <span class="footer-line"></span>
+            <span>Made for campus living</span>
+          </div>
+        </section>
+
+        <section class="login-panel" aria-labelledby="signup-title">
+          <div class="mobile-brand" aria-hidden="true">
+            <span class="brand-mark">
+              <svg viewBox="0 0 32 32" fill="none">
+                <path d="M5 26V13.5L16 5l11 8.5V26h-8v-8h-6v8H5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                <path d="M11 13h.01M21 13h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <span class="brand-name">HostelEase<span>.</span></span>
+          </div>
+          <div class="login-heading">
+            <p class="welcome-label">START YOUR CAMPUS JOURNEY</p>
+            <h2 id="signup-title">Create Your<br><span>HostelEase</span> Account</h2>
+            <p class="login-subtitle">A few details and you’ll be right at home.</p>
+          </div>
+
+          <form id="signup-form" class="auth-form" novalidate>
+            <div class="form-field">
+              <label for="full-name">Full Name</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M5 20c.5-3.5 2.8-5.3 7-5.3s6.5 1.8 7 5.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="full-name" name="fullName" type="text" placeholder="Enter your full name" autocomplete="name" required>
+              </div>
+              <span class="field-error" id="full-name-error"></span>
+            </div>
+            <div class="form-field">
+              <label for="username">Username</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M5 20c.5-3.5 2.8-5.3 7-5.3s6.5 1.8 7 5.3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="username" name="username" type="text" placeholder="Choose a username" autocomplete="username" required>
+              </div>
+              <span class="field-error" id="username-error"></span>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="m5 7 7 5.5L19 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+              <span class="field-error" id="email-error"></span>
+            </div>
+            <div class="form-field">
+              <label for="password">Password</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="password" name="password" type="password" placeholder="Create a password (8+ characters)" autocomplete="new-password" required>
+              </div>
+              <span class="field-error" id="password-error"></span>
+            </div>
+            <div class="form-field">
+              <label for="confirm-password">Confirm Password</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <input id="confirm-password" name="confirmPassword" type="password" placeholder="Re-enter your password" autocomplete="new-password" required>
+              </div>
+              <span class="field-error" id="confirm-password-error"></span>
+            </div>
+            <div class="form-field">
+              <label for="role">Role</label>
+              <div class="input-wrap">
+                <svg class="field-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 20v-1.5A4.5 4.5 0 0 1 8.5 14h7a4.5 4.5 0 0 1 4.5 4.5V20M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+                </svg>
+                <select id="role" name="role" required>
+                  <option value="" selected disabled>Select your role</option>
+                  <option value="student">Student</option>
+                  <option value="warden">Warden</option>
+                  <option value="admin">Admin</option>
+                </select>
+              </div>
+              <span class="field-error" id="role-error"></span>
+            </div>
+            <button class="login-button" type="submit">
+              <span>Create account</span>
+              <span class="button-arrow" aria-hidden="true">→</span>
+            </button>
+            <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="help-note">Already have an account? <a href="index.html">Sign In</a></p>
+          <div class="card-bottom"><span></span><span>YOUR CAMPUS, YOUR COMMUNITY</span><span></span></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© 2025 HostelEase</span>
+        <span class="footer-separator">•</span>
+        <span>Room to grow, space to belong.</span>
+      </footer>
+    </div>
+  </body>
+</html>
